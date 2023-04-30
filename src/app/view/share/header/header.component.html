@@ -39,7 +39,7 @@
                     <button [routerLink]="['/store']" mat-raised-button>
                         Store
                     </button>
-                    <button [routerLink]="['/store/add-book']" mat-raised-button>
+                    <button *ngIf="userData?.permissions === 'admin'" [routerLink]="['/store/add-book']" mat-raised-button>
                         Add Book
                     </button>
                     <button (click)="clickEventLogout()" mat-raised-button>
@@ -55,7 +55,7 @@
                         Store
                         <div class="line"></div>
                     </button>
-                    <button [routerLink]="['/store/add-book']" mat-raised-button>
+                    <button *ngIf="userData?.permissions === 'admin'" [routerLink]="['/store/add-book']" mat-raised-button>
                         Add Book
                     </button>
                     <button (click)="clickEventLogout()" mat-raised-button>
