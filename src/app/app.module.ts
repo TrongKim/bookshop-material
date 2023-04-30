@@ -8,6 +8,11 @@ import { AppComponent } from './app.component';
 import { MatInputModule } from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldDefaultOptions } from '@angular/material/form-field';
+
+const appearance: MatFormFieldDefaultOptions = {
+  appearance: 'outline'
+};
 
 @NgModule({
   declarations: [
@@ -22,7 +27,12 @@ import {MatIconModule} from '@angular/material/icon';
     MatCardModule,
     MatIconModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
+      useValue: appearance
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
