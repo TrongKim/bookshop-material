@@ -1,0 +1,29 @@
+<section class="list-product">
+    <div class="list-product-container container">
+        <div *ngIf="userData && userData.permissions === 'admin'" [routerLink]="['add-book']" class="add-book-container">
+            <h4 class="add-book">Thêm sản phẩm</h4>
+            <div class="line"></div>
+        </div>
+        <ul class="products">
+            <li *ngFor="let book of books" class="product">
+                <mat-card class="card-product">
+                    <div class="image-container">
+                        <div class="fix-image-empty-space">
+                            <img src="{{book.product_image}}" mat-card-sm-image>
+                        </div>
+                    </div>
+                    <div class="name-and-price">
+                        <mat-card-title>{{book.product_name}}</mat-card-title>
+                        <p class="price">${{book.price}}</p>
+                    </div>
+                    <mat-card-content>{{book.product_description}}</mat-card-content>
+                    <div class="tag-book">
+                        <div class="circle"></div>
+                        <mat-card-title>{{book.product_tag}}</mat-card-title>
+                    </div>
+                    <button mat-raised-button class="order-btn">Order Today</button>
+                </mat-card>
+            </li>
+        </ul>
+    </div>
+</section>

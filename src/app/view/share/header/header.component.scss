@@ -1,0 +1,52 @@
+@import 'variables';
+@import 'mixins';
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+mat-toolbar {
+    background-color: $primary_blue_color;
+}
+
+mat-toolbar > button {
+    cursor: pointer;
+
+    background-color: transparent;
+}
+
+mat-toolbar > mat-card-title.logo {
+    margin-left: 1rem;
+
+    color: $white;
+}
+
+mat-toolbar > button.favorite-icon {
+    margin-right: 1rem;
+}
+
+mat-card-subtitle {
+    margin-bottom: unset;
+
+    @include font-cardo(2.2rem);
+    color: $white;
+}
+
+ul.category {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+
+    & > li {
+        padding: 0 3rem;
+
+        cursor: pointer;
+
+        &.username {
+            & > mat-card-subtitle {
+                color: $light_yellow;
+            }
+        }
+    }
+}
+

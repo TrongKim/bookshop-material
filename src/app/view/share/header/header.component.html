@@ -1,0 +1,18 @@
+<mat-toolbar>
+    <mat-card-title class="logo">BookStore</mat-card-title>
+    <span class="example-spacer"></span>
+    <ul class="category">
+        <li *ngIf="userData?.permissions === 'admin'" [routerLink]="['/store/add-book']">
+            <mat-card-subtitle>Add Book</mat-card-subtitle>
+        </li>
+        <li [routerLink]="['/store']">
+            <mat-card-subtitle>Store</mat-card-subtitle>
+        </li>
+        <li (click)="clickEventLogout()">
+            <mat-card-subtitle>Logout</mat-card-subtitle>
+        </li>
+        <li class="username">
+            <mat-card-subtitle>{{userData?.username}}</mat-card-subtitle>
+        </li>
+    </ul>
+</mat-toolbar>

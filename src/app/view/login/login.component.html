@@ -1,0 +1,33 @@
+<section [style.backgroundImage]="'url(assets/img/404/background-error.png)'" class="login-page">
+    <mat-card [formGroup]="signInForm" class="card-login">
+        <mat-card-title>Login</mat-card-title>
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input formControlName="email" matInput required type="email">
+            <mat-hint *ngIf="!emailInput?.value">Enter your Email</mat-hint>
+        </mat-form-field>
+    
+        <mat-form-field>
+            <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="password" required>
+            <mat-icon matSuffix (click)="hide = !hide">{{ hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            <mat-hint *ngIf="!passwordInput?.value">Enter your password</mat-hint>
+        </mat-form-field>
+        <p class="forgot-password">Forgot password?</p>
+
+        <button (click)="clickEventLogin()" [disabled]="signInForm.valid && !isWaitingResponse ? false : 'disabled'" mat-raised-button class="login-btn">
+            LOGIN
+        </button>
+
+        <p class="title-sigup title-sigup-with-other">Or Sign Up Using</p>
+        <div class="icon-list">
+            <button mat-fab><i class="fa-brands fa-facebook-f"></i></button>
+            <button mat-fab class="twitter"><i class="fa-brands fa-twitter"></i></button>
+            <button mat-fab class="google"><i class="fa-brands fa-google"></i></button>
+        </div>
+        <p class="title-sigup title-sigup-account">Or Sign Up Using</p>
+        <div [routerLink]="['/register']" class="sigup-container">
+            <div class="mat-subheading-2">SIGN UP</div>
+            <div class="line"></div>
+        </div>
+    </mat-card>
+</section>

@@ -1,0 +1,186 @@
+@import 'variables';
+@import 'mixins';
+
+section.list-product {
+    padding: 15rem 0;
+
+    & > .list-product-container {
+        & > .add-book-container {
+            width: fit-content;
+            margin-left: auto;
+
+            & > h4.add-book {
+                @include font-cardo(2.4rem);
+                font-weight: 700;
+                color: $primary_blue_color;
+                text-align: end;
+    
+                cursor: pointer;
+            }
+
+            & > .line {
+                width: 0;
+                height: 0;
+
+                border: 2px solid $white;
+
+                transition: width 0.2s linear;
+
+                margin: 0 auto;
+
+                transition: all 0.25s linear;
+            }
+
+            &:hover > .line {
+                width: 5.5rem;
+
+                border: 2px solid $primary_blue_color;
+
+                transition: all 0.25s linear;
+            }
+        }
+
+
+        & > ul.products {
+            display: flex;
+            column-gap: 4.8rem;
+            row-gap: 7rem;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            & > li.product {
+                width: 40.1rem;
+                height: 77.4rem;
+
+                & > mat-card.card-product {
+                    width: 100%;
+                    height: 100%;
+
+                    padding: 0;
+
+                    border: unset;
+                    box-shadow: unset;
+
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    & > .image-container {
+                        width: 40rem;
+                        height: 50rem;
+
+                        display: grid;
+                        place-content: center;
+
+                        background-color: $background-opacity-blue;
+                        
+                        & > .fix-image-empty-space {
+                            width: 30rem;
+                            height: 40rem;
+
+                            overflow: hidden;
+
+                            & > img {
+                                width: 100%;
+                                height: auto;
+                            }
+                        }
+
+
+                    }
+
+
+
+                    & > .name-and-price {
+                        display: flex;
+                        align-items: center;
+    
+                        margin-top: 2rem;
+
+                        width: 100%;
+
+                        & > mat-card-title {
+                            flex: 1;
+
+                            @include font-cardo(3.2rem);
+                            font-weight: 700;
+                            color: $primary_blue_color;
+                            text-align: start;
+    
+                            width: 100%;
+
+                            margin-bottom: unset;
+                        }
+    
+                        & > p.price {
+                            @include font-inter(2.2rem);
+                            line-height: 180%;
+                            font-weight: 700;
+                            color: $light_yellow;
+
+                            margin-bottom: unset;
+                        }
+                        
+                    }
+
+                    & > mat-card-content {
+                        @include description(1.9rem, $gray);
+
+                        margin-top: 0.9rem;
+                        margin-bottom: unset;
+                    }
+
+                    & > .tag-book {
+                        display: flex;
+                        align-items: center;
+                        column-gap: 1.3rem;
+    
+                        margin-top: 2.4rem;
+    
+                        width: 100%;
+    
+                        & > .circle {
+                            @include circle(1.6rem);
+    
+                            background-color: $light_yellow;
+                        }
+    
+                        & > mat-card-title {
+                            @include font-cardo(2.4rem);
+                            font-weight: 700;
+                            color: $primary_blue_color;
+                            text-align: start;
+
+                            margin-bottom: unset;
+                        }
+                    }
+
+                    & > button.order-btn {
+                        @include button(1.9rem, $white, $primary_blue_color);
+    
+                        border: 1px solid $light_yellow;
+    
+                        width: 22rem;
+    
+                        height: 6.5rem;
+    
+                        margin-top: 2.5rem;
+                        margin-right: auto;
+
+                        box-shadow: unset;
+                    }
+
+                }
+
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 433px) {
+    section.list-product > .list-product-container > ul.products {
+        & > li.product > .image-product > img {
+            width: 100%;
+        }
+    }
+}

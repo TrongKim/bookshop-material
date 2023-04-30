@@ -1,0 +1,55 @@
+<div class="detail-product-page">
+    <section class="detail-product">
+        <div class="detail-product-container">
+            <div class="information-about-book">
+                <div class="container-left">
+                    <div *ngIf="!imageSrc" (click)="inputFile.click()" class="image-book">
+                        <div class="add-icon">
+                            <i class="fa-solid fa-plus"></i>
+                            <input (change)="changeEventChoiceFile($event)" #inputFile type="file" hidden>
+                        </div>
+                    </div>
+                    <div *ngIf="imageSrc" (click)="inputFileChoiceAgain.click()" class="image-container">
+                        <img src="{{imageSrc}}" alt="">
+                        <div class="change-icon">
+                            <i class="fa-solid fa-plus"></i>
+                            <input (change)="changeEventChoiceFile($event)" #inputFileChoiceAgain type="file" hidden>
+                        </div>
+                    </div>
+                </div>
+                <div [formGroup]="bookDataForm" class="container-right">
+                    <div class="content-container">
+                        <mat-form-field class="field book-name">
+                            <mat-label>Name Book</mat-label>
+                            <input formControlName="productName" matInput required>
+                        </mat-form-field>
+                        <mat-form-field class="field price">
+                            <mat-label>Price</mat-label>
+                            <input formControlName="price" matInput required>
+                        </mat-form-field>
+                        <mat-form-field class="field description">
+                            <mat-label>Description</mat-label>
+                            <textarea formControlName="productDescription" matInput rows="5"></textarea>
+                        </mat-form-field>
+                        <mat-form-field class="field tag">
+                            <mat-label>Tag</mat-label>
+                            <input formControlName="productTag" matInput required>
+                        </mat-form-field>
+                    </div>
+                    <div class="add-cart-container">
+                        <button [disabled]="bookDataForm.valid && !isWaitingAddBook ? false : 'disabled'" (click)="clickEventAddBook()" class="add-cart-btn">
+                            <div class="plus-icon">
+                                <i class="fa-solid fa-plus"></i>
+                            </div>
+                            <p>Add Book</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div *ngIf="isWaitingAddBook" class="waiting-zone">
+            <div class="circle-scroll"></div>
+        </div>
+    </section>
+</div>

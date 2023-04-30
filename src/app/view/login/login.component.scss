@@ -1,0 +1,148 @@
+@import 'variables';
+@import 'mixins';
+
+section.login-page {
+    padding: 3.5rem 0;
+    
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    display: grid;
+    place-content: center;
+
+    background-size: cover;
+
+}
+
+mat-card.card-login {
+    width: 40rem;
+
+    & > mat-card-title {
+        @include font-cardo(3.2rem);
+        font-weight: 700;
+        color: $primary_blue_color;
+
+        width: fit-content;
+
+        margin: 3.2rem auto;
+        margin-top: 6.4rem;
+    }
+
+    & input {
+        @include font-inter(1.6rem);
+        color: $primary_blue_color;
+    }
+
+    & > mat-form-field {
+        width: 100%;
+    }
+
+    & > p.forgot-password {
+        @include font-inter(1.6rem);
+        color: $gray;
+        
+        cursor: pointer;
+        
+        margin-left: auto;
+
+        width: fit-content;
+    }
+
+    & > button.login-btn {
+        @include button(1.9rem, transparent, $primary_blue_color);
+        
+        border: 2px solid $primary_blue_color;
+        border-radius: unset;
+
+        width: 100%;
+        height: 5rem;
+
+        transition: all 0.2s linear;
+
+        margin-top: 4.8rem;
+
+        &:hover {
+            border: 2px solid $light_yellow;
+        }
+
+    }
+
+    & > p.title-sigup {
+        @include font-inter(1.6rem);
+        color: $gray;
+
+        width: fit-content;
+    }
+
+    & > p.title-sigup-with-other {
+        margin: 0 auto;
+        margin-top: 4.8rem;
+    }
+
+    & > p.title-sigup-account  {
+        margin: 0 auto;
+        margin-top: 6rem;
+    }
+
+    & > .sigup-container {
+        & > .mat-subheading-2 {
+            @include font-cardo(1.9rem);
+            font-weight: 700;
+            color: $primary_blue_color;
+            text-align: center;
+            
+            margin-top: 1rem;
+
+            cursor: pointer;
+
+            transition: all 0.2s linear;
+        }
+
+        & > .line {
+            height: 0;
+            width: 0;
+
+            border: 1px solid $light_yellow;
+            margin: 0 auto;
+            margin-top: -1rem;
+
+            transition: all 0.2s linear;
+
+        }
+
+        &:hover {
+            & > .mat-subheading-2 {
+                color: $light_yellow;
+            }
+
+            & > .line {
+                width: 5.5rem;
+            }
+        }
+    }
+
+
+}
+
+div.icon-list {
+    display: flex;
+    column-gap: 0.5rem;
+
+    width: fit-content;
+
+    margin: 0 auto;
+    margin-top: 2.4rem;
+
+    & > button {
+        background-color: $primary_blue_color;
+
+        &.twitter {
+            background-color: #499feb;
+        }
+        &.google {
+            background-color: #dc4b41;
+        }
+    }
+
+}

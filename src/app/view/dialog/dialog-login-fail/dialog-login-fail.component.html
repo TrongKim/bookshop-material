@@ -1,0 +1,18 @@
+<div fxLayout="row wrap">
+    <div fxFlex.gt-sm="100%">
+        <mat-card>
+            <mat-card-content>
+                <mat-card-title>Hi <span>{{data.email}}</span></mat-card-title>
+                <mat-card-subtitle fxLayout="row">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    Your account be wrong. Could't login to website
+                </mat-card-subtitle>
+                <ol>
+                    <li fxLayout="row">
+                        <button mat-button (click)="clickEventCloseDialog()" cdkFocusInitial>Hủy</button>
+                    </li>
+                </ol>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

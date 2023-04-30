@@ -1,0 +1,13 @@
+@import 'variables';
+@import 'mixins';
+
+mat-card-subtitle {
+    & > span {
+        font-weight: 700;
+        color: $light_yellow;
+    }
+
+    & > i {
+        color: red;
+    }
+}
