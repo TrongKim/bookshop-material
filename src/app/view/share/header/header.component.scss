@@ -1,52 +1,277 @@
 @import 'variables';
 @import 'mixins';
 
-.example-spacer {
-    flex: 1 1 auto;
+mat-card-title {
+    margin-bottom: unset;
 }
 
-mat-toolbar {
-    background-color: $primary_blue_color;
-}
+button[mat-raised-button] {
+    min-width: unset;
 
-mat-toolbar > button {
-    cursor: pointer;
+    box-shadow: unset;
 
     background-color: transparent;
 }
 
-mat-toolbar > mat-card-title.logo {
-    margin-left: 1rem;
+header {
+    background-color: $primary_blue_color;
 
-    color: $white;
+    & > .container {
+        padding-top: 1.5rem;
+        padding-bottom: 11.9rem;
+    }
 }
 
-mat-toolbar > button.favorite-icon {
-    margin-right: 1rem;
-}
-
-mat-card-subtitle {
-    margin-bottom: unset;
-
-    @include font-cardo(2.2rem);
-    color: $white;
-}
-
-ul.category {
+mat-toolbar.top-navbar {
     display: flex;
-    align-items: center;
-    column-gap: 1rem;
+    justify-content: space-between;
 
-    & > li {
-        padding: 0 3rem;
+    background-color: transparent;
+
+    height: 5rem;
+}
+
+mat-card-content.container-left {
+    display: flex;
+    column-gap: 3.3rem;
+
+    & > button.logo {
+        display: flex;
+        column-gap: 8.75px;
+        align-items: center;
+        justify-content: center;
+
+        min-width: unset;
+
+        background-color: transparent;
 
         cursor: pointer;
 
-        &.username {
-            & > mat-card-subtitle {
-                color: $light_yellow;
-            }
+    }
+    
+    & > mat-toolbar.icons-contact {
+        display: flex;
+        column-gap: 1rem;
+
+        background-color: transparent;
+
+        & > button {
+            width: 4.5rem;
+            height: 4.5rem;
+
+            min-width: unset;
+
+            background-color: $white;
+
+            display: grid;
+            place-content: center;
+
+            cursor: pointer;
         }
     }
 }
 
+mat-card-content.container-right {
+    display: flex;
+
+    height: 100%;
+
+    width: fit-content;
+
+    & > mat-toolbar.menu {
+        display: flex;
+        align-items: center;
+
+        background-color: transparent;
+
+
+        & > button {
+            height: 100%;
+
+            padding: 0 2.6rem;
+
+            display: grid;
+            place-content: center;
+            
+            color: $white;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 17px;
+            line-height: 125%;
+
+            cursor: pointer;
+
+            &.username {
+                color: $light_yellow;
+            }
+        }
+
+    }
+
+    & > i {
+        color: $white;
+        font-size: 3rem;
+        margin: auto;
+
+        display: none;
+
+        cursor: pointer;
+    }
+
+    & > mat-toolbar.menu-responsive {
+        width: 100vw;
+
+        height: 60vh;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 3;
+
+        background-color: $light-white-gray;
+
+        flex-direction: column;
+
+        display: none;
+
+        transform: translateY(-100%);
+
+        opacity: 0;
+
+        transition: all 0.25s linear;
+
+        & > button {
+            @include font-cardo(2.4rem);
+            color: $primary_blue_color;
+            font-weight: 700;
+            line-height: 170%;
+
+            flex: 1;
+
+            display: grid;
+            place-content: center;
+
+            border-bottom: 1px solid $primary_blue_color_opacity_2;
+
+            cursor: pointer;
+
+            width: 100%;
+
+            transition: all 0.2s linear;
+
+            & > i {
+                font-size: 3rem;
+            }
+
+            & > p {
+                width: fit-content;
+
+                margin: 0 auto;
+            }
+
+            & > .line {
+                width: 0;
+                
+                height: 0;
+                
+                border: 1px solid $light_yellow;
+                
+                margin: 0 auto;
+
+                transition: all 0.2s linear;
+            }
+
+            &:hover {
+                color: $light_yellow;
+
+                & > .line {
+                    width: 8.5rem;
+                }
+            }
+        }
+
+        &.active {
+            transform: translateY(0);
+
+            opacity: 1;
+        }
+
+    }
+}
+
+mat-card.content-page-container {
+    width: 63.3rem;
+
+    margin: 0 auto;
+    margin-top: 13.8rem;
+
+    background-color: transparent;
+
+    box-shadow: unset;
+
+    & > .title-container {
+        & > mat-card-title {
+            @include font-cardo(5rem);
+            line-height: 110%;
+            letter-spacing: -0.02em;
+            color: $white;
+            font-weight: 700;
+            text-align: center;
+
+            height: unset;
+
+            margin-bottom: unset;
+        }
+
+        & > .line {
+            margin-top: 3.4rem;
+        }
+    }
+
+    & > mat-card-content.description {
+        margin-top: 2.8rem;
+        margin-bottom: unset;
+
+        @include description(1.9rem, $primary_blue_color_opacity_low);
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 1350px) {
+    header {
+        height: unset;
+    }
+}
+
+// @media only screen and (max-width: 1080px) {
+//     mat-card-content.container-right > mat-toolbar.menu > button {
+//         display: none;
+//     }
+// }
+
+@media only screen and (max-width: 891px) {
+    mat-card-content.container-left > mat-toolbar.icons-contact {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    mat-card-content.container-right {
+        & > mat-toolbar.menu {
+            display: none;
+        }
+
+        & > mat-toolbar.menu-responsive {
+            display: flex;
+        }
+
+        & > i {
+            display: block;
+        }
+
+    }
+
+    mat-card.content-page-container {
+        width: 100%;
+    }
+}
