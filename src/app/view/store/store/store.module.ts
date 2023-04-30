@@ -9,6 +9,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { ReactiveFormsModule } from "@angular/forms";
 import { AdminGuard } from "src/app/guard/admin.guard";
+import { FooterModule } from "../../share/footer/footer.module";
 
 @NgModule({
     imports: [
@@ -18,6 +19,7 @@ import { AdminGuard } from "src/app/guard/admin.guard";
         MatCardModule,
         MatButtonModule,
         MatIconModule,
+        FooterModule,
         ReactiveFormsModule,
         RouterModule.forChild([
             {

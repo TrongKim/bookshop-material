@@ -6,14 +6,14 @@
                     <div *ngIf="!imageSrc" (click)="inputFile.click()" class="image-book">
                         <div class="add-icon">
                             <i class="fa-solid fa-plus"></i>
-                            <input (change)="changeEventChoiceFile($event)" #inputFile type="file" hidden>
+                            <input (change)="changeEventChoiceFile($event)" #inputFile type="file" accept="image/png, image/gif, image/jpeg" hidden>
                         </div>
                     </div>
                     <div *ngIf="imageSrc" (click)="inputFileChoiceAgain.click()" class="image-container">
                         <img src="{{imageSrc}}" alt="">
                         <div class="change-icon">
                             <i class="fa-solid fa-plus"></i>
-                            <input (change)="changeEventChoiceFile($event)" #inputFileChoiceAgain type="file" hidden>
+                            <input (change)="changeEventChoiceFile($event)" accept="image/png, image/gif, image/jpeg"  #inputFileChoiceAgain type="file" hidden>
                         </div>
                     </div>
                 </div>

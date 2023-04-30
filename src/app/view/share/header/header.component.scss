@@ -5,6 +5,14 @@ mat-card-title {
     margin-bottom: unset;
 }
 
+mat-card {
+    background-color: transparent;
+}
+
+.mat-card:not([class*=mat-elevation-z])  {
+    box-shadow: unset;
+}
+
 button[mat-raised-button] {
     min-width: unset;
 
@@ -31,7 +39,7 @@ mat-toolbar.top-navbar {
     height: 5rem;
 }
 
-mat-card-content.container-left {
+mat-card.container-left {
     display: flex;
     column-gap: 3.3rem;
 
@@ -71,7 +79,7 @@ mat-card-content.container-left {
     }
 }
 
-mat-card-content.container-right {
+mat-card.container-right {
     display: flex;
 
     height: 100%;
