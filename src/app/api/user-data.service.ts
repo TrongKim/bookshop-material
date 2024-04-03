@@ -10,7 +10,7 @@ export class UserDataService {
             id: 'fdsafsadf432',
             username: 'Nguyen Duc Ha',
             password: 'adminadmin',
-            permissions: 'normal',
+            permissions: 'admin',
             email: 'adfdsa@gmail.com'
         },
         {

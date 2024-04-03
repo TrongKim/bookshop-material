@@ -11,6 +11,7 @@
     line-height: 125%;
 
     cursor: pointer;
+
 }
 
 @mixin button($font-size, $background-color, $color) {
@@ -66,6 +67,7 @@
 
 @mixin circle($size) {
     width: $size;
+    min-width: $size;
     height: $size;
 
     border-radius: 50%;

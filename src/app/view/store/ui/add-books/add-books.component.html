@@ -31,11 +31,22 @@
                             <mat-label>Description</mat-label>
                             <textarea formControlName="productDescription" matInput rows="5"></textarea>
                         </mat-form-field>
-                        <mat-form-field appearance="outline" class="field tag">
+                        <!-- <mat-form-field appearance="outline" class="field tag">
                             <mat-label>Tag</mat-label>
                             <input formControlName="productTag" matInput required>
-                        </mat-form-field>
+                        </mat-form-field> -->
+                        <mat-form-field>
+                            <mat-label>Tags</mat-label>
+                            <mat-select #mode value="side">
+                              <mat-option value="side">Traveler</mat-option>
+                              <mat-option value="over">Wild</mat-option>
+                              <mat-option value="push">Cook</mat-option>
+                            </mat-select>
+                        </mat-form-field>          
                     </div>
+                    <mat-slider>
+                        <input matSliderThumb>
+                    </mat-slider>
                     <div class="add-cart-container">
                         <button [disabled]="bookDataForm.valid && !isWaitingAddBook ? false : 'disabled'" (click)="clickEventAddBook()" class="add-cart-btn">
                             <div class="plus-icon">
@@ -46,7 +57,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
         <div *ngIf="isWaitingAddBook" class="waiting-zone">
             <div class="circle-scroll"></div>

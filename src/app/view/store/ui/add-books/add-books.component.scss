@@ -1,6 +1,10 @@
 @import 'variables';
 @import 'mixins';
 
+mat-slider {
+    width: 300px;
+}
+
 section.detail-product {
     padding: 15rem 0;
 

@@ -9,15 +9,18 @@ import {MatButtonModule} from '@angular/material/button';
 import { ReactiveFormsModule } from "@angular/forms";
 import { AddBooksComponent } from "./add-books.component";
 import { DialogAddProductModule } from "../dialog-add-product/dialog-add-product.module";
-
+import {MatSelectModule} from '@angular/material/select';
+import {MatSliderModule} from '@angular/material/slider';
 @NgModule({
     imports: [
         HeaderModule,
         CommonModule,
         MatInputModule,
         MatCardModule,
+        MatSelectModule,
         MatButtonModule,
         MatIconModule,
+        MatSliderModule,
         ReactiveFormsModule,
         DialogAddProductModule,
         RouterModule.forChild([
